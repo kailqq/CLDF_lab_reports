@@ -1,0 +1,17 @@
+*.log
+*.tex
+*.aux
+*.zip
+*.synctex.gz
+*.synctex
+*.out
+*.docx
+*.pptx
+*.jpg
+*.doc
+*.synctex(busy)
+*.md
+pc/
+math/
+physic/
+ZjuReportTemplate/
