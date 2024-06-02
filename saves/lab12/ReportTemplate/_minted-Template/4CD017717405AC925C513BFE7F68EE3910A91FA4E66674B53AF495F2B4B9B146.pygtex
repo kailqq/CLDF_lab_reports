@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//  pbdebounce p0(clk\PYGZus{}1ms, btn\PYGZus{}in, btn\PYGZus{}out);}
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{btn\PYGZus{}out}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{btn\PYGZus{}in}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,47 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{k}{module}\PYG{+w}{ }\PYG{n}{lab12Top2}\PYG{p}{(}
+\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{clk}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{SW}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{BTN}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{SEGMENT}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{AN}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{NUM}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{BTNX4}
+\PYG{+w}{    }\PYG{p}{);}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{Load\PYGZus{}A}\PYG{p}{,}\PYG{n}{Load\PYGZus{}B}\PYG{p}{,}\PYG{n}{Load\PYGZus{}C}\PYG{p}{,}\PYG{n}{Co}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{A}\PYG{p}{,}\PYG{+w}{  }\PYG{n}{A\PYGZus{}IN}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{A1}\PYG{p}{,}\PYG{n}{B}\PYG{p}{,}\PYG{n}{B\PYGZus{}IN}\PYG{p}{,}\PYG{n}{B1}\PYG{p}{,}\PYG{n}{C}\PYG{p}{,}\PYG{n}{C\PYGZus{}IN}\PYG{p}{,}\PYG{n}{Bus}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{31}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}div}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{num}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{num}\PYG{+w}{ }\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n}{A}\PYG{p}{,}\PYG{n}{B}\PYG{p}{,}\PYG{n}{C}\PYG{p}{,}\PYG{n}{Bus}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{    }\PYG{n}{MyRegister4b}\PYG{+w}{ }\PYG{n}{RegA}\PYG{p}{(.}\PYG{n}{clk}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{IN}\PYG{p}{(}\PYG{n}{A\PYGZus{}IN}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{Load}\PYG{p}{(}\PYG{n}{Load\PYGZus{}A}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{OUT}\PYG{p}{(}\PYG{n}{A}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{MyRegister4b}\PYG{+w}{ }\PYG{n}{RegB}\PYG{p}{(.}\PYG{n}{clk}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{IN}\PYG{p}{(}\PYG{n}{B\PYGZus{}IN}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{Load}\PYG{p}{(}\PYG{n}{Load\PYGZus{}B}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{OUT}\PYG{p}{(}\PYG{n}{B}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{MyRegister4b}\PYG{+w}{ }\PYG{n}{RegC}\PYG{p}{(.}\PYG{n}{clk}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{IN}\PYG{p}{(}\PYG{n}{C\PYGZus{}IN}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{Load}\PYG{p}{(}\PYG{n}{Load\PYGZus{}C}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{OUT}\PYG{p}{(}\PYG{n}{C}\PYG{p}{));}
+
+\PYG{+w}{    }\PYG{n}{Load\PYGZus{}Gen}\PYG{+w}{ }\PYG{n}{m0}\PYG{p}{(.}\PYG{n}{clk}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{clk\PYGZus{}1ms}\PYG{p}{(}\PYG{n}{clk\PYGZus{}div}\PYG{p}{[}\PYG{l+m+mh}{17}\PYG{p}{]),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{btn\PYGZus{}in}\PYG{p}{(}\PYG{n}{BTN}\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{p}{]),.}\PYG{n}{Load\PYGZus{}out}\PYG{p}{(}\PYG{n}{Load\PYGZus{}A}\PYG{p}{));}\PYG{c+c1}{//寄存器A的Load信号}
+\PYG{+w}{    }\PYG{n}{Load\PYGZus{}Gen}\PYG{+w}{ }\PYG{n}{m1}\PYG{p}{(.}\PYG{n}{clk}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{clk\PYGZus{}1ms}\PYG{p}{(}\PYG{n}{clk\PYGZus{}div}\PYG{p}{[}\PYG{l+m+mh}{17}\PYG{p}{]),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{btn\PYGZus{}in}\PYG{p}{(}\PYG{n}{BTN}\PYG{p}{[}\PYG{l+m+mh}{2}\PYG{p}{]),.}\PYG{n}{Load\PYGZus{}out}\PYG{p}{(}\PYG{n}{Load\PYGZus{}B}\PYG{p}{));}\PYG{c+c1}{//寄存器B的Load信号}
+\PYG{+w}{    }\PYG{n}{Load\PYGZus{}Gen}\PYG{+w}{ }\PYG{n}{m2}\PYG{p}{(.}\PYG{n}{clk}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{clk\PYGZus{}1ms}\PYG{p}{(}\PYG{n}{clk\PYGZus{}div}\PYG{p}{[}\PYG{l+m+mh}{17}\PYG{p}{]),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{btn\PYGZus{}in}\PYG{p}{(}\PYG{n}{BTN}\PYG{p}{[}\PYG{l+m+mh}{1}\PYG{p}{]),.}\PYG{n}{Load\PYGZus{}out}\PYG{p}{(}\PYG{n}{Load\PYGZus{}C}\PYG{p}{));}\PYG{c+c1}{//寄存器C的Load信号}
+
+\PYG{+w}{    }\PYG{n}{clkdiv}\PYG{+w}{ }\PYG{n}{m3}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{1}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}div}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{AddSub4b}\PYG{+w}{ }\PYG{n}{m4}\PYG{p}{(.}\PYG{n}{A}\PYG{p}{(}\PYG{n}{A}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{B}\PYG{p}{(}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0001}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{Ctrl}\PYG{p}{(}\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{0}\PYG{p}{]),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{S}\PYG{p}{(}\PYG{n}{A1}\PYG{p}{));}\PYG{c+c1}{//自增/自减逻辑}
+\PYG{+w}{    }\PYG{n}{AddSub4b}\PYG{+w}{ }\PYG{n}{m5}\PYG{p}{(.}\PYG{n}{A}\PYG{p}{(}\PYG{n}{B}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{B}\PYG{p}{(}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0001}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{Ctrl}\PYG{p}{(}\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{1}\PYG{p}{]),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{S}\PYG{p}{(}\PYG{n}{B1}\PYG{p}{));}\PYG{c+c1}{//自增/自减逻辑}
+
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{A\PYGZus{}IN}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mh}{1}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{)}\PYG{o}{?}\PYG{+w}{ }\PYG{n+nl}{A1:}\PYG{+w}{ }\PYG{n}{Bus}\PYG{p}{;}\PYG{+w}{   }\PYG{c+c1}{//2选1多路复用器，复位寄存器初值}
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{B\PYGZus{}IN}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mh}{1}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{)}\PYG{o}{?}\PYG{+w}{ }\PYG{n+nl}{B1:}\PYG{+w}{ }\PYG{n}{Bus}\PYG{p}{;}\PYG{+w}{   }\PYG{c+c1}{//2选1多路复用器，复位寄存器初值}
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{C\PYGZus{}IN}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mh}{1}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{)}\PYG{o}{?}\PYG{+w}{ }\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0000}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{Bus}\PYG{p}{;}\PYG{+w}{   }\PYG{c+c1}{//2选1多路复用器，复位寄存器初值}
+
+\PYG{+w}{    }\PYG{n}{Mux4to1b4}\PYG{+w}{ }\PYG{n}{m7}\PYG{p}{(}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{I0}\PYG{p}{(}\PYG{n}{A}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{I1}\PYG{p}{(}\PYG{n}{B}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{I2}\PYG{p}{(}\PYG{n}{C}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{I3}\PYG{p}{(}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0000}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{S}\PYG{p}{(}\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{8}\PYG{o}{:}\PYG{l+m+mh}{7}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{O}\PYG{p}{(}\PYG{n}{Bus}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{DispNum}\PYG{+w}{ }\PYG{n}{m8}\PYG{p}{(.}\PYG{n}{scan}\PYG{p}{(}\PYG{n}{clk\PYGZus{}div}\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{o}{:}\PYG{l+m+mh}{2}\PYG{p}{]),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{HEXS}\PYG{p}{(}\PYG{n}{num}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{LES}\PYG{p}{(}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{point}\PYG{p}{(}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{AN}\PYG{p}{(}\PYG{n}{AN}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{.}\PYG{n}{SEGMENT}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{));}
+
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{BTNX4}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{1}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{NUM}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{num}\PYG{p}{;}\PYG{c+c1}{//引出NUM用于仿真观察}
+\PYG{k}{endmodule}
+\end{Verbatim}

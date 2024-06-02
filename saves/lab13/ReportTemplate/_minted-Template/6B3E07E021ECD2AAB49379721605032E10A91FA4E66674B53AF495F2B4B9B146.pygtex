@@ -1,0 +1,37 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{        }\PYG{k}{module}\PYG{+w}{ }\PYG{n}{shift\PYGZus{}tb}\PYG{p}{();}
+\PYG{+w}{    }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{n}{clk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{p\PYGZus{}in}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{n}{S\PYGZus{}L}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{n}{s\PYGZus{}in}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{Q}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{shfit\PYGZus{}reg8b}\PYG{+w}{ }\PYG{n}{uut}
+\PYG{+w}{    }\PYG{p}{(}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{clk}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{S\PYGZus{}L}\PYG{p}{(}\PYG{n}{S\PYGZus{}L}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{s\PYGZus{}in}\PYG{p}{(}\PYG{n}{s\PYGZus{}in}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{p\PYGZus{}in}\PYG{p}{(}\PYG{n}{p\PYGZus{}in}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{Q}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{initial}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{clk}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{forever}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{         }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{clk}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{n}{clk}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{end}
+
+\PYG{+w}{    }\PYG{k}{initial}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{S\PYGZus{}L}\PYG{o}{=}\PYG{l+m+mh}{1}\PYG{p}{;}\PYG{c+c1}{//选择并行输入}
+\PYG{+w}{        }\PYG{n}{p\PYGZus{}in}\PYG{o}{=}\PYG{l+m+mh}{0}\PYG{p}{;}\PYG{c+c1}{//初始化为0}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{100}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{S\PYGZus{}L}\PYG{o}{=}\PYG{l+m+mh}{0}\PYG{p}{;}\PYG{c+c1}{//选择串行输入}
+\PYG{+w}{        }\PYG{n}{s\PYGZus{}in}\PYG{o}{=}\PYG{l+m+mh}{1}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{p\PYGZus{}in}\PYG{o}{=}\PYG{l+m+mh}{8\PYGZsq{}hFF}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{400}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{S\PYGZus{}L}\PYG{o}{=}\PYG{l+m+mh}{1}\PYG{p}{;}\PYG{c+c1}{//选择并行输入}
+\PYG{+w}{    }\PYG{k}{end}
+
+\PYG{k}{endmodule}
+\end{Verbatim}

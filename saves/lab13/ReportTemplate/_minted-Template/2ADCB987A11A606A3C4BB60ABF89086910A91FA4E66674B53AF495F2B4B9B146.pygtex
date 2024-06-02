@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{module}\PYG{+w}{ }\PYG{n}{Disp\PYGZus{}Decorder}\PYG{p}{(}
+\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{D}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{point}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{LE}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{SEGMENT}
+\PYG{+w}{    }\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{MyMC14495}\PYG{+w}{ }\PYG{n}{m0}\PYG{p}{(}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{D3}\PYG{p}{(}\PYG{n}{D}\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{D2}\PYG{p}{(}\PYG{n}{D}\PYG{p}{[}\PYG{l+m+mh}{2}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{D1}\PYG{p}{(}\PYG{n}{D}\PYG{p}{[}\PYG{l+m+mh}{1}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{D0}\PYG{p}{(}\PYG{n}{D}\PYG{p}{[}\PYG{l+m+mh}{0}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{point}\PYG{p}{(}\PYG{n}{point}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{LE}\PYG{p}{(}\PYG{n}{LE}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{g}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{[}\PYG{l+m+mh}{6}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{f}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{[}\PYG{l+m+mh}{5}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{e}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{[}\PYG{l+m+mh}{4}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{d}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{c}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{[}\PYG{l+m+mh}{2}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{b}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{[}\PYG{l+m+mh}{1}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{a}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{[}\PYG{l+m+mh}{0}\PYG{p}{]),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{p}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{p}{])}
+\PYG{+w}{        }\PYG{p}{);}
+
+\PYG{k}{endmodule}
+\end{Verbatim}

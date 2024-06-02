@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{module}\PYG{+w}{ }\PYG{n}{SR\PYGZus{}LATCH}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{n}{S}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{n}{Qbar}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{n}{Q}
+\PYG{+w}{  }\PYG{p}{);}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{Q\PYGZus{}temp}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{Qbar\PYGZus{}temp}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{Qbar\PYGZus{}temp}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{S}\PYG{+w}{ }\PYG{o}{|}\PYG{+w}{ }\PYG{n}{Q\PYGZus{}temp}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{Q\PYGZus{}temp}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Qbar\PYGZus{}temp}\PYG{+w}{ }\PYG{o}{|}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{Qbar}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Qbar\PYGZus{}temp}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{assign}\PYG{+w}{ }\PYG{n}{Q}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Q\PYGZus{}temp}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{endmodule}
+\end{Verbatim}

@@ -1,0 +1,49 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{        }\PYG{k}{module}\PYG{+w}{ }\PYG{n}{SEG\PYGZus{}DRV\PYGZus{}tb}\PYG{p}{(}
+
+\PYG{+w}{    }\PYG{p}{);}
+\PYG{+w}{    }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{n}{clk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{SW}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{SEGCLK}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{SEGCLR}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{SEGDT}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{SEGEN}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{SEG\PYGZus{}DRV}\PYG{+w}{ }\PYG{n}{m0}\PYG{p}{(}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{clk}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{SW}\PYG{p}{(}\PYG{n}{SW}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{SEGCLK}\PYG{p}{(}\PYG{n}{SEGCLK}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{SEGCLR}\PYG{p}{(}\PYG{n}{SEGCLR}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{SEGDT}\PYG{p}{(}\PYG{n}{SEGDT}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{SEGEN}\PYG{p}{(}\PYG{n}{SEGEN}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{initial}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{clk}\PYG{o}{=}\PYG{l+m+mh}{0}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{forever}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{5}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{clk}\PYG{o}{=\PYGZti{}}\PYG{n}{clk}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{initial}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{o}{=}\PYG{l+m+mh}{16}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{;}\PYG{c+c1}{//开关初始化}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}\PYG{c+c1}{//学号后八位为30102400}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{8}\PYG{l+m+mb}{\PYGZsq{}b10101100}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{8}\PYG{l+m+mb}{\PYGZsq{}b00000000}\PYG{p}{;}\PYG{c+c1}{//此时为10101100}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{8}\PYG{l+m+mb}{\PYGZsq{}b10001100}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{8}\PYG{l+m+mb}{\PYGZsq{}b00000000}\PYG{p}{;}\PYG{c+c1}{//此时为20102200}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{8}\PYG{l+m+mb}{\PYGZsq{}b10000100}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{8}\PYG{l+m+mb}{\PYGZsq{}b00000000}\PYG{p}{;}\PYG{c+c1}{//此时为30102300}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{8}\PYG{l+m+mb}{\PYGZsq{}b00000100}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{8}\PYG{l+m+mb}{\PYGZsq{}b00000000}\PYG{p}{;}\PYG{c+c1}{//此时为30102400//初始化为学号后八位}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{500}\PYG{p}{;}\PYG{c+c1}{//等待寄存器被排空}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{1}\PYG{p}{;}\PYG{c+c1}{//使能将30102400输入到串并转换器}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{k}{endmodule}
+\end{Verbatim}

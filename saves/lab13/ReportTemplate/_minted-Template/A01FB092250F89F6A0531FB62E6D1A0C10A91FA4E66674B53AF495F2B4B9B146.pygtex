@@ -1,0 +1,58 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{        }\PYG{k}{module}\PYG{+w}{ }\PYG{n}{LEDP2S}\PYG{p}{(}
+
+\PYG{+w}{    }\PYG{p}{);}
+\PYG{+w}{    }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{n}{clk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{SW}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{BTN}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{BTNX4}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{SEGMENT}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{3}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{AN}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{LED\PYGZus{}CLK}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{LED\PYGZus{}CLR}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{LED\PYGZus{}DO}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{LED\PYGZus{}EN}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{LED\PYGZus{}DRV}\PYG{+w}{ }\PYG{n}{m0}\PYG{p}{(}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{clk}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{SW}\PYG{p}{(}\PYG{n}{SW}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{BTN}\PYG{p}{(}\PYG{n}{BTN}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{BTNX4}\PYG{p}{(}\PYG{n}{BTNX4}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{SEGMENT}\PYG{p}{(}\PYG{n}{SEGMENT}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{AN}\PYG{p}{(}\PYG{n}{AN}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{LED\PYGZus{}CLK}\PYG{p}{(}\PYG{n}{LED\PYGZus{}CLK}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{LED\PYGZus{}CLR}\PYG{p}{(}\PYG{n}{LED\PYGZus{}CLR}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{LED\PYGZus{}DO}\PYG{p}{(}\PYG{n}{LED\PYGZus{}DO}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{.}\PYG{n}{LED\PYGZus{}EN}\PYG{p}{(}\PYG{n}{LED\PYGZus{}EN}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{initial}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{o}{=}\PYG{l+m+mh}{16}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{;}\PYG{c+c1}{//开关初始化}
+\PYG{+w}{        }\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{;}\PYG{c+c1}{//按钮初始化}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{4}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b1111}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b1111}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0000}\PYG{p}{;}\PYG{c+c1}{//四个寄存器初始化为0}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{7}\PYG{o}{:}\PYG{l+m+mh}{4}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0000}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b1111}\PYG{p}{;\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0000}\PYG{p}{;}\PYG{c+c1}{//四个寄存器加到一}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b1110}\PYG{p}{;\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0000}\PYG{p}{;}\PYG{c+c1}{//前三个寄存器加到二}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b1100}\PYG{p}{;\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0000}\PYG{p}{;}\PYG{c+c1}{//前两个寄存器加到三}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b1000}\PYG{p}{;\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}\PYG{n}{BTN}\PYG{o}{=}\PYG{l+m+mh}{4}\PYG{l+m+mb}{\PYGZsq{}b0000}\PYG{p}{;}\PYG{c+c1}{//第一个寄存器加到四}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{20}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{200}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{1}\PYG{p}{;}\PYG{c+c1}{//开始移位}
+\PYG{+w}{        }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{50}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{SW}\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mh}{0}\PYG{p}{;}\PYG{c+c1}{//停止移位}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{initial}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{clk}\PYG{o}{=}\PYG{l+m+mh}{0}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{forever}\PYG{+w}{ }\PYG{p}{\PYGZsh{}}\PYG{l+m+mh}{10}\PYG{+w}{ }\PYG{n}{clk}\PYG{o}{=\PYGZti{}}\PYG{n}{clk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{k}{endmodule}
+\end{Verbatim}
