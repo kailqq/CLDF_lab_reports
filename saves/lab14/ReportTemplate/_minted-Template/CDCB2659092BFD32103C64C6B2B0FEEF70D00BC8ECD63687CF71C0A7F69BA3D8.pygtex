@@ -1,7 +1,7 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{module}\PYG{+w}{ }\PYG{n}{Clock\PYGZus{}Top}\PYG{p}{(}
 \PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{clk}\PYG{p}{,}
-\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{n}{SW}\PYG{p}{,}\PYG{c+c1}{//15控置移位使能，14控制数码管清零，13控制数码管使能，12控制分秒时的CR，11\PYGZhy{}4输入时间，3\PYGZhy{}1控制时钟是否并行输入,0控制开始计数}
+\PYG{+w}{    }\PYG{k}{input}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{15}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{n}{SW}\PYG{p}{,}\PYG{c+c1}{//15控置移位使能，14控制数码管清零，13控制数码管使能，12控制分秒时的CR,3\PYGZhy{}1控制时钟是否并行输入,0控制开始计数}
 \PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{SEGCLK}\PYG{p}{,}\PYG{c+c1}{//数码管时钟信号}
 \PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{SEGCLR}\PYG{p}{,}
 \PYG{+w}{    }\PYG{k}{output}\PYG{+w}{ }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{n}{SEGDT}\PYG{p}{,}
